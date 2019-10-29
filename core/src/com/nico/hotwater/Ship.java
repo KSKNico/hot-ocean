@@ -51,7 +51,7 @@ public class Ship extends Sprite {
     public void moveToTarget() {
         this.targetVector = new Vector2( targetPosition.x - position.x, targetPosition.y - position.y );
         if (Math.abs(targetVector.angle()-facing.angle()) > 2) {
-            facing.rotate(Math.signum(targetVector.dot((facing.cpy()).rotate90(1))) * turningRate);
+            facing.rotate(Math.signum(targetVector.dot((facing.cpy()).rotate90(1))) * turningRate * speed * speed);
         }
         speed += 0.01;
     }
