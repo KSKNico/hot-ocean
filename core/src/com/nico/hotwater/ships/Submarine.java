@@ -5,7 +5,7 @@ import com.nico.hotwater.Resources;
 import com.nico.hotwater.Ship;
 
 public class Submarine extends Ship {
-    public boolean canSubmerge;
+    public boolean isSubmerged;
 
     public Submarine(Vector2 position, Vector2 facing) {
         super(position, facing);
