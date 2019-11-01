@@ -12,7 +12,7 @@ public class Ship extends Sprite {
     public Vector2 targetVector;
     public float speed = 1;
     public float turningRate = 1f;
-    public boolean destroyed = true;
+    public boolean destroyed = false;
     public int team;
 
     public Ship(Vector2 position, Vector2 facing) {
@@ -66,6 +66,6 @@ public class Ship extends Sprite {
     }
 
     public void findTarget(Ship player) {
-        
+
     }
 }

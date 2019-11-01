@@ -2,7 +2,9 @@ package com.nico.hotwater;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
+import com.nico.hotwater.ships.SurfaceShip;
 import com.nico.hotwater.ships.Torpedo;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.Vector;
 
@@ -14,11 +16,12 @@ public class Level {
     public Level(int numberOfEnemies, int maxNumberOfEnemies) {
         this.numberOfEnemies = numberOfEnemies;
         this.maxNumberOfEnemies = maxNumberOfEnemies;
+        this.enemies = new Vector<>();
     }
 
     public boolean spawnEnemies() {
         if (enemies.size() <= maxNumberOfEnemies) {
-            enemies.add(new Ship(new Vector2(0, 0), new Vector2(1, 1).setToRandomDirection()));
+            enemies.add(new SurfaceShip(new Vector2(0, 0), new Vector2(1, 1).setToRandomDirection()));
             return true;
         }
         return false;
