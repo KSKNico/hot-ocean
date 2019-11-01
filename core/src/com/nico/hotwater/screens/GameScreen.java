@@ -7,10 +7,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.nico.hotwater.HotWaterGame;
+import com.nico.hotwater.Level;
 import com.nico.hotwater.Resources;
 import com.nico.hotwater.Ship;
 import com.nico.hotwater.ships.Submarine;
@@ -24,6 +26,7 @@ public class GameScreen implements Screen {
     public Batch gameBatch;
     public Ship player;
     public InputProcessor input;
+    public Level level;
 
     public GameScreen(Game aGame) {
         game = aGame;
@@ -70,8 +73,9 @@ public class GameScreen implements Screen {
                 return false;
             }
         };
-        player = new Submarine(new Vector2(1 , 1), new Vector2(5, 5));
+        player = new Submarine(new Vector2(1 , 1), new Vector2(1, 1));
         gameBatch = new SpriteBatch();
+        level = new Level(3, 10);
     }
 
     @Override
@@ -89,6 +93,7 @@ public class GameScreen implements Screen {
 
         Resources.getInstance().background.draw(gameBatch);
         player.draw(gameBatch);
+        level.draw(gameBatch);
 
         gameBatch.end();
         stage.act();

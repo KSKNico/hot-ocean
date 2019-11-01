@@ -9,7 +9,7 @@ public class Resources {
 
     public Sprite playerSubmarine = new Sprite(new Texture(Gdx.files.internal("sprites/submarines/player-submarine.png")));
     public Sprite background = new Sprite(new Texture(Gdx.files.internal("sprites/backgrounds/water-background.png")));
-    // public Sprite enemyShip = new Sprite(new Texture(Gdx.files.internal(""));
+    public Sprite enemyShip = new Sprite(new Texture(Gdx.files.internal("sprites/surfaceships/enemy-ship-destroyer.png")));
     // public Sprite torpedo = new Sprite(new Texture(Gdx.files.internal(""));
 
 
