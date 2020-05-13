@@ -9,6 +9,8 @@ public class Submarine extends Ship {
 
     public Submarine(Vector2 position, Vector2 facing) {
         super(position, facing);
+        this.maximumSpeed = 1f;
+        this.maximumSpeed = 1f;
         this.set(Resources.getInstance().playerSubmarine);
     }
 }

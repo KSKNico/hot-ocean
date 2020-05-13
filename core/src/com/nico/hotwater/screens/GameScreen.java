@@ -16,13 +16,15 @@ import com.nico.hotwater.Ship;
 import com.nico.hotwater.ships.Submarine;
 import com.badlogic.gdx.InputProcessor;
 
+import java.util.HashMap;
+
 
 public class GameScreen implements Screen {
 
     private Stage stage;
     private Game game;
     public Batch gameBatch;
-    public Ship player;
+    public static Ship player;
     public InputProcessor input;
     public Level level;
 
@@ -73,7 +75,9 @@ public class GameScreen implements Screen {
         };
         player = new Submarine(new Vector2(1 , 1), new Vector2(1, 1));
         gameBatch = new SpriteBatch();
-        level = new Level(3, 10);
+        HashMap firstLevel = new HashMap<String, Integer>();
+        firstLevel.put("destroyer", 10);
+        level = new Level(10, 3, firstLevel);
     }
 
     @Override
